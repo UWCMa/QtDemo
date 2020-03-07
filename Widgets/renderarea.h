@@ -12,11 +12,17 @@ public:
     QSize minimumSizeHint() const override;
     QSize sizeHint()        const override;
 
+    void setBackgroundColor(const QColor& color);
+    QColor getBackgroundColor() const;
+
+    enum Shapes {Astroid = 0, Cycloid, HuyhensCycloid, HypoCycloid};
 protected:
     void paintEvent(QPaintEvent *event) override;
 
 signals:
-
+private:
+    QColor mBackgroundColor;
+    QColor mShapeColor;
 };
 
 #endif // RENDERAREA_H
